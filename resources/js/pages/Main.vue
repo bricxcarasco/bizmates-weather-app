@@ -98,40 +98,18 @@
     openWeatherApiService
       .getWeather(data)
       .then((response) => {
-        // cal current date & time
-        // const localOffset = new Date().getTimezoneOffset() * 6000;
-        // const utc = response.data.timestamp * 1000 + localOffset;
-        // response.data.currentTime =
-        //   utc + 1000 * response.data.timezone;
-
-        // let options = {timeZone: "Asia/Tokyo", timeZoneName: 'short'};
-        // let japanTime = new Intl.DateTimeFormat('ja-JP', options);
-        // console.log(japanTime);
-        // response.data.currentTime = japanTime
-
-        // let offset = 9*60;
-        // let japanTimestamp = Date.now() + offset * 60 * 1000;
-        // response.data.currentTime = japanTimestamp;
-
-        // cal hourly weather offset
-
-        // response.data.hourly.forEach((hour) => {
-        //   const utc = hour.dt * 1000 + localOffset;
-        //   hour.currentTime =
-        //     utc + 1000 * response.data.timezone_offset;
-        // });
-
         weatherData.value = response.data;
-
-        console.log(weatherData.value)
-
-        // return weatherData.data;
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
+  /**
+   * Set selected city on select dropdown
+   *
+   * @returns {void}
+   */
   const selectCity = () => {
     selectedCity.value = selectCityRef.value.value;
     if (selectedCity.value) {

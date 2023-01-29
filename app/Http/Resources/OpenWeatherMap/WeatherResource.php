@@ -14,14 +14,11 @@ class WeatherResource extends JsonResource
      */
     public function toArray($request)
     {
-        date_default_timezone_set('Asia/Tokyo');
-        $timestamp = time();
-
         return [
             'name' => $this->name,
             'description' => $this->weather[0]->description,
             'icon' => $this->weather[0]->icon,
-            'timestamp' => $timestamp,
+            'timestamp' => $this->dt,
             'timezone' => $this->timezone,
             'temperature' => $this->main->temp,
             'feels_like' => $this->main->feels_like,
