@@ -17,7 +17,7 @@ To run Bizmates Weather App on local machine follow these instructions:
 6.  Access the site in [http://127.0.0.1:8000/](http://127.0.0.1:8000/) url
 
   
-# Bizmates Weather App Features
+# Bizmates Weather App Technical Features
 
 ## Backend
 
